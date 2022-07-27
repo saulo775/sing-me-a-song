@@ -3,6 +3,7 @@ import { recommendationSchema } from "../schemas/recommendationsSchemas.js";
 import { recommendationService } from "../services/recommendationsService.js";
 import { wrongSchemaError } from "../utils/errorUtils.js";
 
+//[X]
 async function insert(req: Request, res: Response) {
   const validation = recommendationSchema.validate(req.body);
   if (validation.error) {
@@ -14,6 +15,7 @@ async function insert(req: Request, res: Response) {
   res.sendStatus(201);
 }
 
+//[]
 async function upvote(req: Request, res: Response) {
   const { id } = req.params;
 
@@ -22,6 +24,7 @@ async function upvote(req: Request, res: Response) {
   res.sendStatus(200);
 }
 
+//[]
 async function downvote(req: Request, res: Response) {
   const { id } = req.params;
 
@@ -30,17 +33,20 @@ async function downvote(req: Request, res: Response) {
   res.sendStatus(200);
 }
 
+//[X]
 async function random(req: Request, res: Response) {
   const randomRecommendation = await recommendationService.getRandom();
 
   res.send(randomRecommendation);
 }
 
+//[X]
 async function get(req: Request, res: Response) {
   const recommendations = await recommendationService.get();
   res.send(recommendations);
 }
 
+//[X]
 async function getTop(req: Request, res: Response) {
   const { amount } = req.params;
 
@@ -48,9 +54,9 @@ async function getTop(req: Request, res: Response) {
   res.send(recommendations);
 }
 
+//[X]
 async function getById(req: Request, res: Response) {
   const { id } = req.params;
-
   const recommendation = await recommendationService.getById(+id);
   res.send(recommendation);
 }
