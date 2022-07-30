@@ -1,8 +1,8 @@
-import { recommendationRepository } from './../src/repositories/recommendationRepository';
+import { recommendationRepository } from '../../src/repositories/recommendationRepository';
 import supertest from "supertest";
 import { faker } from "@faker-js/faker";
-import app from "../src/app";
-import { prisma } from "../src/database";
+import app from "../../src/app";
+import { prisma } from "../../src/database";
 
 const NAME = faker.name.jobTitle();
 const YOUTUBE_LINK = 'https://www.youtube.com/watch?v=XhUWLTNeNPs&t=37s';

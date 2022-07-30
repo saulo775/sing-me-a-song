@@ -69,7 +69,7 @@ async function remove(id: number) {
   });
 }
 
-export const recommendationRepository = {
+const recommendationRepository = {
   create,
   findAll,
   find,
@@ -78,3 +78,5 @@ export const recommendationRepository = {
   getAmountByScore,
   remove,
 };
+
+export default recommendationRepository;

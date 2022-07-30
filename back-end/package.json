@@ -8,7 +8,8 @@
     "build": "tsc src/server.ts",
     "start": "node dist/server.js",
     "dev": "nodemon src/server.ts",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest -i"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest -i --coverage",
+    "test:unit": "NODE_OPTIONS=--experimental-vm-modules jest -i --coverage --testPathPattern=tests/unit"
   },
   "keywords": [],
   "author": "",
