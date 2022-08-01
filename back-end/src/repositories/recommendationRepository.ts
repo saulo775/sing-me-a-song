@@ -69,6 +69,10 @@ async function remove(id: number) {
   });
 }
 
+async function deleteAll() {
+  await prisma.recommendation.deleteMany();
+}
+
 const recommendationRepository = {
   create,
   findAll,
@@ -77,6 +81,7 @@ const recommendationRepository = {
   updateScore,
   getAmountByScore,
   remove,
+  deleteAll
 };
 
 export default recommendationRepository;

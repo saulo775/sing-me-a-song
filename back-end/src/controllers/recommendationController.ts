@@ -54,6 +54,11 @@ async function getById(req: Request, res: Response) {
   res.send(recommendation);
 }
 
+async function deleteAll(req: Request, res: Response) {
+  await recommendationService.deleteAll();
+  res.sendStatus(201);
+}
+
 export const recommendationController = {
   insert,
   upvote,
@@ -62,4 +67,5 @@ export const recommendationController = {
   getTop,
   get,
   getById,
+  deleteAll
 };
